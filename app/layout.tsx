@@ -11,8 +11,8 @@ const ibmPlexSerif = IBM_Plex_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Fintess",
-  description: "Fintess is modern banking platrofm for everyone.",
+  title: "Horizon",
+  description: "Horizon is modern banking platrofm for everyone.",
   icons: {
     icon: '/icons/logo.svg'
   }
