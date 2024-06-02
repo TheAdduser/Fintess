@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from 'react'
@@ -20,16 +22,32 @@ const AuthForm = ({ type }: {type: string}) => {
                 
                 </Link>
 
-                <div className="flex flex-col gap-1 md: gap-3">
-                  <h1>
+                <div className="flex flex-col gap-1 md:gap-3">
+                  <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
                     {user
                     ? 'Link Account'
                     : type === 'sign-up'
                     ? 'Sign In'
                     : 'Sign Up'}
+
+                    <p className="text-16 font-normal text-gray-600">
+                      {user
+                      ? 'Link your account ro get started'
+                      : 'Please enter your details'
+                      }
+                    </p>
                   </h1>
                 </div>
       </header>
+      {user ? (
+        <div className="flex flex-col gap-4">
+            {/* PlaidLink */}
+        </div>
+      ):(
+        <>
+          FORM
+        </>
+      )}
     </section>
   )
 }
