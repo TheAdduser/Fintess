@@ -36,10 +36,25 @@ const AuthForm = ({ type }: {type: string}) => {
       },
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
       setisLoading(true)
-      console.log(values)
-      setisLoading(false);
+      try {
+      // Sign up with Appwrite & create plain link token
+
+        if(type === 'sign-up') {
+            const userData = {
+              firstName: data.firstName,
+            }
+        }
+
+        if(type === 'sign-in'){
+
+        }
+      } catch (error) {
+        console.log(error)
+      } finally {
+        setisLoading(false);
+      }
     }
 
   return (
@@ -95,6 +110,9 @@ const AuthForm = ({ type }: {type: string}) => {
               </div>
               <CustomInput
                 control = {form.control} name = 'address1' label = 'Address' placeholder = 'Enter your adress'
+              />
+              <CustomInput
+                control = {form.control} name = 'city' label = 'City' placeholder = 'Enter your city'
               />
               <div className="flex gap-4">
               <CustomInput
